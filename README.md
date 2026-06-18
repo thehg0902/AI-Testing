@@ -8,6 +8,6 @@ A simple Python greeting utility.
 python hello.py
 ```
 
-## Licence
+## License
 
 MIT
