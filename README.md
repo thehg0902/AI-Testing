@@ -12,4 +12,4 @@ python hello.py
 
 MIT
 
-你好
+Add in Claude.MD to start
