@@ -4,3 +4,4 @@ def greet(name="World"):
 
 if __name__ == "__main__":
     print(greet())
+    print("this is the first greet")
