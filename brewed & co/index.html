@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewed &amp; Co. — Roasted Fresh Every Morning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader__logo">Brewed &amp; Co.</div>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <div class="loader__percent" id="loaderPercent">0%</div>
+  </div>
+
+  <!-- SCROLL-SCRUB CANVAS (fixed background) -->
+  <canvas id="scrollCanvas"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">Brewed &amp; Co.</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="#location">Find Us</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ALL CONTENT SCROLLS OVER THE CANVAS -->
+  <main id="pageContent">
+
+    <!-- HERO SPACER -->
+    <section class="hero-spacer">
+      <div class="hero-text">
+        <h1 class="hero-text__title">Brewed &amp; Co.</h1>
+        <p class="hero-text__sub">Roasted at dawn, in your cup by morning</p>
+        <a href="menu.html" class="hero-text__cta">Explore Our Menu</a>
+      </div>
+      <div class="scroll-hint" id="scrollHint" style="display:none">
+        Scroll to explore
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- FEATURED DRINKS -->
+    <section class="section drinks" id="drinks">
+      <p class="section__label">What We're Pouring</p>
+      <h2 class="section__heading">Signature Drinks</h2>
+      <div class="drinks__grid">
+
+        <div class="drink-card">
+          <!-- REPLACE: overhead shot of a classic latte with latte art -->
+          <div class="drink-card__img">[ Photo: Latte ]</div>
+          <div class="drink-card__body">
+            <h3 class="drink-card__name">The Morning Pull</h3>
+            <p class="drink-card__desc">Our house espresso with steamed milk — simple, honest, and exactly what 6 a.m. needs.</p>
+            <span class="drink-card__price">$5.00</span>
+          </div>
+        </div>
+
+        <div class="drink-card">
+          <!-- REPLACE: 45° shot of an iced cold brew in a clear glass -->
+          <div class="drink-card__img">[ Photo: Cold Brew ]</div>
+          <div class="drink-card__body">
+            <h3 class="drink-card__name">Slow-Steeped Cold Brew</h3>
+            <p class="drink-card__desc">Steeped for 18 hours, poured over ice. Smooth, chocolatey, and never bitter.</p>
+            <span class="drink-card__price">$5.50</span>
+          </div>
+        </div>
+
+        <div class="drink-card">
+          <!-- REPLACE: overhead shot of a golden oat milk latte -->
+          <div class="drink-card__img">[ Photo: Oat Latte ]</div>
+          <div class="drink-card__body">
+            <h3 class="drink-card__name">Golden Oat Latte</h3>
+            <p class="drink-card__desc">Espresso meets oat milk and a whisper of vanilla — creamy, warm, dairy-free.</p>
+            <span class="drink-card__price">$6.00</span>
+          </div>
+        </div>
+
+        <div class="drink-card">
+          <!-- REPLACE: shot of a matcha latte with green swirl -->
+          <div class="drink-card__img">[ Photo: Matcha ]</div>
+          <div class="drink-card__body">
+            <h3 class="drink-card__name">Ceremonial Matcha</h3>
+            <p class="drink-card__desc">Stone-ground Japanese matcha, whisked with your choice of milk. Earthy and grounding.</p>
+            <span class="drink-card__price">$6.50</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <p class="section__label">Our Story</p>
+      <h2 class="section__heading">A little about us</h2>
+      <div class="about__wrapper">
+        <div class="about__text">
+          <p>Every morning before the sun fully rises, we fire up the roaster. The beans arrive green, and by the time we unlock the front door, the whole block smells like fresh coffee. That's not a marketing line — that's just how we start our day.</p>
+          <p>Brewed &amp; Co. grew out of a simple belief: coffee tastes best when it hasn't been sitting on a shelf for weeks. We roast in small batches, right here in the shop, so every cup you drink was beans just hours ago. It's a little more work, but you can taste the difference — and that's the whole point.</p>
+        </div>
+        <!-- REPLACE: barista at the roaster, warm morning light, candid shot -->
+        <div class="about__img">[ Photo: Barista roasting ]</div>
+      </div>
+    </section>
+
+    <!-- HOURS & LOCATION -->
+    <section class="section location" id="location">
+      <p class="section__label">Find Us</p>
+      <h2 class="section__heading">Hours &amp; Location</h2>
+      <div class="location__grid">
+        <div class="location__info">
+          <h3>Come say hello</h3>
+          <p>123 Roast Lane</p>
+          <p>Toronto, ON M5V 2T6</p>
+          <p><a href="tel:6475550192" style="color:var(--accent)">647-555-0192</a></p>
+          <p><a href="mailto:hello@brewedandco.ca" style="color:var(--accent)">hello@brewedandco.ca</a></p>
+          <div class="hours">
+            <h3>Hours</h3>
+            <p>Monday – Friday: 7:00 AM – 6:00 PM</p>
+            <p>Saturday – Sunday: 8:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <!-- REPLACE: embedded Google Map or static map image of café location -->
+        <div class="location__map">[ Map embed placeholder ]</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">Brewed &amp; Co.</div>
+          <p class="footer__tagline">Roasted fresh every morning in our shop. Come for the coffee, stay for the warmth.</p>
+        </div>
+        <ul class="footer__nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#location">Find Us</a></li>
+        </ul>
+        <div class="footer__social">
+          <!-- REPLACE: real social links -->
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="TikTok">TK</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 Brewed &amp; Co. All rights reserved.
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
