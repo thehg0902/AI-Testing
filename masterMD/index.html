@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brewed & Co. — Freshly Roasted, Every Morning</title>
+  <meta name="description" content="Brewed & Co. is a neighbourhood café that slow-roasts its own beans in-house every morning. Fresh coffee, warm pastries, and a space that feels like home.">
+  <meta name="keywords" content="Brewed & Co, café, coffee shop, fresh roasted coffee, artisan coffee, pastries, neighbourhood café">
+  <link rel="canonical" href="https://brewedandco.ca/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brewed & Co. — Freshly Roasted, Every Morning">
+  <meta property="og:description" content="A neighbourhood café that slow-roasts its own beans in-house every morning. Fresh coffee, warm pastries, and a space that feels like home.">
+  <!-- REPLACE: OG share image — 1200×630px branded café photo -->
+  <meta property="og:image" content="asset/og-image.jpg">
+  <meta property="og:url" content="https://brewedandco.ca/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brewed & Co. — Freshly Roasted, Every Morning">
+  <meta name="twitter:description" content="A neighbourhood café that slow-roasts its own beans in-house every morning.">
+  <!-- REPLACE: OG share image -->
+  <meta name="twitter:image" content="asset/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Brewed & Co.",
+    "description": "A neighbourhood café that slow-roasts its own beans in-house every morning.",
+    "telephone": "647-555-0192",
+    "email": "hello@brewedandco.ca",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "17:00" }
+    ],
+    "url": "https://brewedandco.ca/"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-brand">Brewed & Co.</div>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill" id="loader-bar-fill"></div>
+    </div>
+    <div class="loader-percent" id="loader-percent">0%</div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition"></div>
+
+  <!-- Scroll-Scrub Canvas -->
+  <canvas id="scroll-canvas" class="scroll-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Brewed & Co.</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#drinks">Featured</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="#find-us">Find Us</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#home">Home</a>
+    <a href="#drinks">Featured</a>
+    <a href="#about">Our Story</a>
+    <a href="menu.html">Menu</a>
+    <a href="#find-us">Find Us</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <!-- REPLACE: Wide interior café shot — warm lighting, wooden tables, morning light streaming through windows, people in soft focus -->
+      <img src="../asset/Heroimage.png" alt="Interior of Brewed & Co. café with warm lighting and wooden furnishings" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Every Cup Starts at Dawn</h1>
+      <p>We slow-roast our beans in-house every single morning, so your first sip is always the freshest thing on the block.</p>
+      <a href="menu.html" class="hero-cta">Explore Our Menu</a>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Hero Spacer — gives scroll-scrub room to play -->
+  <div class="hero-spacer">
+    <div class="scrub-text-track" aria-hidden="true">
+      <div class="scrub-text-word" data-index="0">Fresh.</div>
+      <div class="scrub-text-word" data-index="1">Hot.</div>
+      <div class="scrub-text-word" data-index="2">Ready to have your first sip.</div>
+    </div>
+  </div>
+
+  <!-- Featured Drinks -->
+  <section class="section section-glass" id="drinks">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What We're Pouring</h2>
+      <p class="section-subtitle reveal reveal-delay-1">Our signatures — crafted from beans roasted just hours ago.</p>
+      <div class="drinks-grid">
+
+        <div class="drink-card reveal reveal-delay-1">
+          <div class="drink-img">
+            <!-- REPLACE: Overhead shot of a classic latte with rosetta art in a ceramic cup -->
+            <div class="drink-img-placeholder" role="img" aria-label="The Morning Ritual latte"></div>
+          </div>
+          <h3>The Morning Ritual</h3>
+          <p class="drink-desc">A double-shot latte pulled slow, finished with velvety oat milk and a whisper of vanilla.</p>
+          <span class="drink-price">$5.50</span>
+        </div>
+
+        <div class="drink-card reveal reveal-delay-2">
+          <div class="drink-img">
+            <!-- REPLACE: Iced cold brew in a tall glass with cream swirling, condensation on glass -->
+            <div class="drink-img-placeholder" role="img" aria-label="Cold Press cold brew"></div>
+          </div>
+          <h3>Cold Press</h3>
+          <p class="drink-desc">Steeped overnight, served over ice with a clean cocoa finish. Bold without the bite.</p>
+          <span class="drink-price">$5.00</span>
+        </div>
+
+        <div class="drink-card reveal reveal-delay-3">
+          <div class="drink-img">
+            <!-- REPLACE: Golden-toned turmeric latte in a small ceramic bowl-cup, steam rising -->
+            <div class="drink-img-placeholder" role="img" aria-label="Golden Hour turmeric latte"></div>
+          </div>
+          <h3>Golden Hour</h3>
+          <p class="drink-desc">House-made turmeric and ginger blend, steamed with your milk of choice. Warm you right through.</p>
+          <span class="drink-price">$5.75</span>
+        </div>
+
+        <div class="drink-card reveal reveal-delay-4">
+          <div class="drink-img">
+            <!-- REPLACE: Espresso in a small white cup, crema visible, on a saucer -->
+            <div class="drink-img-placeholder" role="img" aria-label="Straight Shot espresso"></div>
+          </div>
+          <h3>Straight Shot</h3>
+          <p class="drink-desc">Single origin, freshly roasted, pulled to perfection. The purest way to taste the morning.</p>
+          <span class="drink-price">$3.50</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section section-glass" id="about">
+    <div class="section-inner">
+      <div class="about-content">
+        <div class="about-text reveal">
+          <h2 class="section-title" style="text-align:left;margin-bottom:var(--space-md)">We Roast Before You Wake</h2>
+          <p>Every morning at 5am, before the first customer walks in, our roaster fires up. We buy green beans from small farms we trust — places where people care about the soil as much as the cup — and roast them right here, in the back of the shop. By the time you order, your coffee was beans just hours ago.</p>
+          <p>Brewed & Co. started because we thought a neighbourhood deserved a place where the coffee was genuinely fresh, not just marketed that way. We're not chasing trends. We're just making the best cup we can, every single day, and hoping you can taste the difference.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <!-- REPLACE: Barista at work or close-up of small-batch coffee roaster with beans tumbling, warm light, slightly moody -->
+          <div class="about-img-placeholder" role="img" aria-label="Barista roasting coffee beans in-house"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-glass" id="reviews">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What People Are Saying</h2>
+      <p class="section-subtitle reveal reveal-delay-1">Don't take our word for it — our neighbours have plenty to say.</p>
+      <div class="testimonials-grid">
+
+        <!-- REPLACE: real customer review -->
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"I've tried every café in the neighbourhood and nothing comes close. You can actually taste how fresh the beans are — it's a completely different experience."</blockquote>
+          <cite>— Sarah M., regular since 2023</cite>
+        </div>
+
+        <!-- REPLACE: real customer review -->
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"The Golden Hour latte got me through an entire winter. This place feels like a warm hug on a cold morning. Staff always remembers my name."</blockquote>
+          <cite>— David K., morning regular</cite>
+        </div>
+
+        <!-- REPLACE: real customer review -->
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"I brought my laptop planning to stay an hour and left four hours later. Great Wi-Fi, even better pastries, and the cold brew is genuinely the best I've had."</blockquote>
+          <cite>— Priya T., remote worker</cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section class="section section-glass" id="find-us">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Find Us</h2>
+      <p class="section-subtitle reveal reveal-delay-1">We're easy to find and always happy to see you.</p>
+      <div class="location-content">
+        <div class="reveal reveal-delay-1">
+          <h3 style="font-size:1.3rem;margin-bottom:var(--space-md)">Hours</h3>
+          <ul class="hours-list">
+            <li><span class="day">Monday – Friday</span><span>7:00 am – 7:00 pm</span></li>
+            <li><span class="day">Saturday</span><span>8:00 am – 8:00 pm</span></li>
+            <li><span class="day">Sunday</span><span>8:00 am – 5:00 pm</span></li>
+          </ul>
+          <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="tel:6475550192">647-555-0192</a></p>
+            <p><strong>Email:</strong> <a href="mailto:hello@brewedandco.ca">hello@brewedandco.ca</a></p>
+            <p><strong>Best time to reach us:</strong> Mornings, 9am – 12pm</p>
+            <!-- REPLACE: actual street address -->
+            <p style="margin-top:var(--space-sm)"><strong>Address:</strong> 247 Queen St W, Toronto, ON</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <!-- REPLACE: Google Maps embed or static map of the café location -->
+          <div class="map-placeholder">
+            <div style="text-align:center">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="margin-bottom:12px;opacity:0.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <p style="margin-bottom:12px">Map loading area</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=247+Queen+St+W+Toronto+ON" target="_blank" rel="noopener" class="map-link">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Brewed & Co.</div>
+        <p class="footer-tagline">Slow-roasted in-house every morning. A neighbourhood café built on freshness, warmth, and really good coffee.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#drinks">Featured</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <!-- REPLACE: real social media URLs -->
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="TikTok">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Brewed & Co. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
