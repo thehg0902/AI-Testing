@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: black;
+  }
+
+  .msg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 4vw;
+    white-space: nowrap;
+    animation: flashcolor 0.4s infinite;
+    text-shadow: 0 0 15px black, 0 0 30px black;
+  }
+
+  @keyframes flashcolor {
+    0%, 49% { color: red; }
+    50%, 100% { color: blue; }
+  }
+</style>
+</head>
+<body>
+  <p class="msg" id="msg">cynthia is 笨蛋</p>
+
+<script>
+  const el = document.getElementById('msg');
+  const texts = ['cynthia is 笨蛋', 'cynthia is 大笨蛋'];
+  let textIndex = 0;
+
+  let x = Math.random() * (window.innerWidth - 300);
+  let y = Math.random() * (window.innerHeight - 60);
+  let vx = 3;
+  let vy = 3;
+
+  function bounce() {
+    textIndex = (textIndex + 1) % texts.length;
+    el.textContent = texts[textIndex];
+  }
+
+  function tick() {
+    const w = el.offsetWidth;
+    const h = el.offsetHeight;
+
+    x += vx;
+    y += vy;
+
+    if (x <= 0) {
+      x = 0;
+      vx = Math.abs(vx);
+      bounce();
+    } else if (x + w >= window.innerWidth) {
+      x = window.innerWidth - w;
+      vx = -Math.abs(vx);
+      bounce();
+    }
+
+    if (y <= 0) {
+      y = 0;
+      vy = Math.abs(vy);
+      bounce();
+    } else if (y + h >= window.innerHeight) {
+      y = window.innerHeight - h;
+      vy = -Math.abs(vy);
+      bounce();
+    }
+
+    el.style.transform = `translate(${x}px, ${y}px)`;
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+
+  window.addEventListener('resize', () => {
+    x = Math.min(x, window.innerWidth - el.offsetWidth);
+    y = Math.min(y, window.innerHeight - el.offsetHeight);
+  });
+</script>
+</body>
+</html>
